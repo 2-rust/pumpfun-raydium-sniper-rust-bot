@@ -97,8 +97,6 @@ TIME_EXCEED=60
 ```
 3. Run `raypump-bot.exe`.
 
-![image](https://github.com/user-attachments/assets/dffc8e4b-cd00-4921-8488-e25230f4a31a)
-
 ---
 ## 💰 Donations
 
@@ -107,5 +105,5 @@ TIME_EXCEED=60
 ---
 ## 📞 Support & Contact
 
-For support and further inquiries, please connect via Telegram: 📞 [DillonSolai](https://t.me/DillonSolai).
+For support and further inquiries, please connect via Telegram: 📞 [T-rustdev](https://t.me/T_rustdev).
 
