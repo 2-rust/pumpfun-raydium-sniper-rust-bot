@@ -61,8 +61,6 @@ src/
 
 ```
 ---
-## Trial Version
-🗂️ [solana-raypump-sniper(trial).zip](https://github.com/user-attachments/files/18754518/solana-raypump-sniper.trial.zip)
 
 ### 🎯 Trading Strategy
 
@@ -95,13 +93,11 @@ TIME_EXCEED=60
 0x1234567890abcdef1234567890abcdef12345678
 0xabcdef1234567890abcdef1234567890abcdef12
 ```
-3. Run `raypump-bot.exe`.
-
----
-## 💰 Donations
-
-👉👌 6vT7nrqtbXDWVc8cRUtifxgfDZi19aW7qhcZg2hSepwb
-
+3. Run
+ ```
+rustc main.rs
+.\main.exe
+```
 ---
 ## 📞 Support & Contact
 
