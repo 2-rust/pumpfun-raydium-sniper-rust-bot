@@ -1,4 +1,4 @@
-# <h1>Solana Ultra-Fast Token Sniper Bot on Raydium & Pumpfun (Rust) <h1?
+# <h1>Solana Ultra-Fast Token Sniper Bot on Raydium & Pumpfun (Rust) </h1>
 
 ## Overview
 
