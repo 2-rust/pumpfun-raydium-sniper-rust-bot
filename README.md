@@ -1,8 +1,8 @@
-# Solana Ultra-Fast Token Sniper on Raydium & Pump.fun (Rust) 
+# <h1>Solana Ultra-Fast Token Sniper Bot on Raydium & Pumpfun (Rust) <h1?
 
 ## Overview
 
-Introducing the **Solana Ultra-Fast Token Sniper**, a high-performance **Rust-based** bot engineered to snipe newly launched tokens on **Raydium** and **Pump.fun** at unparalleled speeds. Designed for precision and efficiency, this sniper bot leverages **low-latency execution, gRPC data feeds, and MEV optimization** to give traders an edge in volatile markets.
+Introducing the **Solana Ultra-Fast Token Sniper Bot**, a high-performance **Rust-based** bot engineered to snipe newly launched tokens on **Raydium** and **Pumpfun** at unparalleled speeds. Designed for precision and efficiency, this sniper bot leverages **low-latency execution, gRPC data feeds, and MEV optimization** to give traders an edge in volatile markets.
 
 ## Key Features
 
