@@ -28,40 +28,6 @@ Introducing the **Solana Ultra-Fast Token Sniper Bot**, a high-performance **Rus
 
 ---
 
-## 📁 Directory Structure
-
-```plaintext
-src/
-├── core/
-│   ├── token.rs        # Token definitions and handling
-│   ├── tx.rs           # Transaction processing & execution
-│
-├── engine/
-│   ├── swap.rs         # Buy/Sell functionalities across DEXs
-│   ├── monitor/        # Token monitoring & RPC parsing
-│   │   ├── helius.rs       # Helius gRPC for transaction listening
-│   │   ├── yellowstone.rs  # Yellowstone gRPC for real-time updates
-│
-├── dex/
-│   ├── pump_fun.rs     # Pump.fun integration
-│   ├── raydium.rs      # Raydium integration
-│   ├── meteora.rs      # Meteora integration
-│   ├── orca.rs         # Orca integration
-│
-├── services/
-│   ├── jito.rs         # Jito for fast transaction inclusion
-│   ├── nextblock.rs    # Alternative fast transaction confirmation service
-│
-├── common/
-│   ├── logger.rs       # Structured logging for debugging
-│   ├── utils.rs        # Utility functions used across the project
-│
-├── lib.rs
-└── main.rs
-
-```
----
-
 ### 🎯 Trading Strategy
 
 - **Buy Entry:** Executes a purchase when a $1,000+ token buy is detected.
